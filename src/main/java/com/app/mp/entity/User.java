@@ -1,9 +1,16 @@
 package com.app.mp.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.time.LocalDateTime;
 
+@TableName("user")
 public class User {
+    @TableId
     private Long id;
+    @TableField("name") //指定数据库中字段名
     private String name;
     private Integer age;
     private String email;
