@@ -23,5 +23,6 @@ public class MpApplicationTests {
     public void selectTest(){
         List<User> userList = userMapper.selectList(null);
         Assert.assertEquals(5, userList.size());
+        System.out.println(111);
     }
 }
