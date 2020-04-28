@@ -158,4 +158,18 @@ public class SelectTest {
             logger.debug("user = {}", user);
         }
     }
+
+    /**
+     * 查询部分列
+     */
+    @Test
+    public void testSelectByWrapper9() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<User>();
+        queryWrapper.select("id","name");
+        List<User> userList = userMapper.selectList(queryWrapper);
+
+        for (User user : userList) {
+            logger.debug("user = {}", user);
+        }
+    }
 }
