@@ -17,6 +17,9 @@ public class User {
     private Long managerId;
     private LocalDateTime createTime;
 
+    @TableField(exist = false)
+    private transient String memoInfo;  // 数据库中没有对应的字段 transient
+
     public Long getId() {
         return id;
     }
@@ -63,5 +66,13 @@ public class User {
 
     public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
+    }
+
+    public String getMemoInfo() {
+        return memoInfo;
+    }
+
+    public void setMemoInfo(String memoInfo) {
+        this.memoInfo = memoInfo;
     }
 }

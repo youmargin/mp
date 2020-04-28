@@ -38,6 +38,7 @@ public class MpApplicationTests {
         user.setAge(30);
         user.setManagerId(1088248166370832385l);
         user.setCreateTime(LocalDateTime.now());
+        user.setMemoInfo("test");
         int rows = userMapper.insert(user);
         logger.debug("rows = {}", rows);
     }
