@@ -8,4 +8,6 @@ logging:
   level:
     root: info
     com.app.mp: debug
-
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false  # 字段采用驼峰方式，不转为下划线
