@@ -75,4 +75,17 @@ public class User {
     public void setMemoInfo(String memoInfo) {
         this.memoInfo = memoInfo;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                ", managerId=" + managerId +
+                ", createTime=" + createTime +
+                ", memoInfo='" + memoInfo + '\'' +
+                '}';
+    }
 }
