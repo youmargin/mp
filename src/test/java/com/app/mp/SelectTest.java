@@ -106,4 +106,30 @@ public class SelectTest {
             logger.debug("user = {}", user);
         }
     }
+
+    @Test
+    public void testSelectByWrapper5() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<User>();
+        queryWrapper.likeRight("name","王");
+        queryWrapper.and(wq->wq.lt("age",40).or().isNotNull("email"));
+
+        List<User> userList = userMapper.selectList(queryWrapper);
+
+        for (User user : userList) {
+            logger.debug("user = {}", user);
+        }
+    }
+
+    @Test
+    public void testSelectByWrapper6() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<User>();
+        queryWrapper.likeRight("name","王");
+        queryWrapper.or(wq->wq.between("age",20, 40).or().isNotNull("email"));
+
+        List<User> userList = userMapper.selectList(queryWrapper);
+
+        for (User user : userList) {
+            logger.debug("user = {}", user);
+        }
+    }
 }
